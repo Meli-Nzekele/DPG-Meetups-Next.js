@@ -1,5 +1,5 @@
 import { getFeaturedEvents } from "/helpers/api";
-import EventList from "./events";
+import EventList from "./../components/events/EventList";
 import { useState, useEffect } from "react";
 
 export default function Homepage() {
@@ -17,7 +17,8 @@ export default function Homepage() {
 
   return (
     <div className='Homepage'>
-      <h1>ALL EVENTS</h1>
+      <h1>WELCOME TO DEVOPS PLAYGROUND EVENTS PAGE</h1>
+      <h2>Featured Events</h2>
       <EventList events={featuredEvents}/>
     </div>
   );
