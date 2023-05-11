@@ -20,14 +20,14 @@ function AllEventsPage() {
     });
   }, []);
 
-
   if (!events.length) {
     return <p>Loading...</p>;
   }
 
   return (
     <>
-      <EventsSearch onSearch={findEventsHandler}/>
+      <h1>ALL EVENTS</h1>
+      <EventsSearch onSearch={findEventsHandler} />
       <EventList events={events} />
     </>
   );
