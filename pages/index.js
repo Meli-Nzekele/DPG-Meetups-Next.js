@@ -30,9 +30,6 @@ export default function Homepage() {
   return (
     <div className="Homepage">
       <h1 className="main_title">Welcome to DevOps Playground Events Page</h1>
-      <div className={styles.feature_title_container}>
-        <h2 className={styles.feature_title}>Featured Events</h2>
-      </div>
       <EventList events={featuredEvents} />
     </div>
   );

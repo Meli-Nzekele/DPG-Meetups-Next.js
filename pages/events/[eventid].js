@@ -17,16 +17,6 @@ export default function IndividualEventPage() {
     });
   }, [eventid]);
 
-  if (isNaN(eventid)) {
-    return (
-      <>
-        <div className="loading_container">
-          <p className="loading_text">Invalid event url...</p>
-        </div>
-      </>
-    );
-  }
-
   if (!event) {
     return (
       <div className="loading_container">
