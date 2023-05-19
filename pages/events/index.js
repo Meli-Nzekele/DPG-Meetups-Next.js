@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { getAllEvents } from "/helpers/api";
 import EventList from "/components/events/EventList";
 import EventsSearch from "@/components/events/EventSearch";
+import Loader from "/components/Loader";
 
 function AllEventsPage() {
   const [events, setEvents] = useState([]);
@@ -21,18 +22,7 @@ function AllEventsPage() {
   }, []);
 
   if (!events.length) {
-    return (
-      <div className="loading_container">
-        <div className="lds-ring">
-          {" "}
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <p className="loading_text">Getting your events...</p>
-      </div>
-    );
+    return <Loader />
   }
 
   return (
