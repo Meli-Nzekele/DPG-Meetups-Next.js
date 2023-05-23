@@ -47,9 +47,11 @@ This should bring up the following page:
 
 ### Step 2
 
-Enter YOUR OWN NAME AND SUERNAME in the username box like in the following example. Make sure to use capital letters as per the example. Once done, click submit. 
+Enter YOUR OWN NAME AND SUERNAME in the username box like in the following example. Make sure to use capital letters as per the example below:  
 
 <img width="640" alt="Screenshot 2023-05-23 at 11 31 32" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/dd37b03c-2e64-46f0-917a-fdd00ac923bd">
+
+Once done, click submit.
 
 ### Step 3
 
