@@ -173,7 +173,7 @@ You should be presented with VS Code which should look something like this:
 
 if you are in the right file, you should be presented with this code:
 
-```
+```javascript
 import { getFeaturedEvents } from "/helpers/api";
 import EventList from "./../components/events/EventList";
 import { useState, useEffect } from "react";
@@ -204,7 +204,7 @@ export default function Homepage() {
 2. At the bottom of the file and **OUTSIDE** of the Homepage component, we will create a React Server Component using Next.js ```getStaticProps``` function. 
 3. Inside of this function, we will return an object with a key of props:
 
-```
+```javascript
 export async function getStaticProps() {
   return {
     props: {
@@ -216,7 +216,7 @@ export async function getStaticProps() {
 
 The complete code will now look like this:
 
-```
+```javascript
 import { getFeaturedEvents } from "/helpers/api";
 import EventList from "./../components/events/EventList";
 import { useState, useEffect } from "react";
@@ -255,7 +255,7 @@ export async function getStaticProps() {
 
 4. We will now use the same API call as we are currently using inside of the ``useEffect`` to fetch the ``featuredEvents`` data inside of ``getStaticProps``:
 
-```
+```javascript
 export async function getStaticProps() {
   const featuredEvents = await getFeaturedEvents();
   
@@ -270,7 +270,7 @@ export async function getStaticProps() {
 
 5. Once we have fetched ``featuredEvents`` from the API inside of getStaticProps, we can go back to put Homepage component and deconstruct ``featuredEvents`` that we are passing from getStaticProps as props as follows:
 
-```
+```javascript
 export default function Homepage({featuredEvents}) {
 
 	...
@@ -288,7 +288,7 @@ export default function Homepage({featuredEvents}) {
 Consequently, our code should look like this:
 
 
-```
+```javascript
 import { getFeaturedEvents } from "/helpers/api";
 import EventList from "./../components/events/EventList";
 
@@ -322,7 +322,7 @@ Our running application should look like this:
 1. Comment out the current ``getStaticProps`` component or remove all of the code inside of it so it is empty for us to work with. 
 2. You can also remove the ``getFeaturedEvents`` import at the top of the page so the overall code looks like this:
 
-```
+```javascript
 import EventList from "./../components/events/EventList";
 
 export default function Homepage({featuredEvents}) {
@@ -340,12 +340,12 @@ export async function getStaticProps() {
 ```
 
 3. At the top of the page, we will import the ``fs`` module from node:
-```
+```javascript
 import fs from "fs/promises"
 ```
 4. We will use fs' ``readFile`` method inside of the ``getStaticProps`` and await its data as follows:
 
-```
+```javascript
 export async function getStaticProps() {
   const jsonData = await fs.readFile();
 }
@@ -355,7 +355,8 @@ export async function getStaticProps() {
 5. We will then construct the path between our current working directory and the file we are trying to read. To do that, we will import ``path`` from node and create a new variable which we can use to store our constructed path. 
 6. We can then ensure that the constructed path is consumed by ``fs.readFile()``:
 
-```import "path" from "path" 
+```javascript
+import "path" from "path" 
 
 ....
 
@@ -367,7 +368,7 @@ export async function getStaticProps() {
 ```
 6. We can now parse the data that we received from ``readFile()`` using the JSON object:
 
-```
+```javascript
 export async function getStaticProps() {
   const filePath = path.join(process.cwd(), "data", "events_data.json")
   const jsonData = await fs.readFile(filePath);
@@ -378,7 +379,7 @@ export async function getStaticProps() {
 
 7. Lastly, we will return the``allEvents`` data using an object with a props key. Our completed ``getStaticProps`` function should look like this:
 
-```
+```javascript
 export async function getStaticProps() {
   const filepath = path.join(process.cwd(), "data", "events", "events_data.json")
   const jsonData = await fs.readFile(filepath);
@@ -394,7 +395,7 @@ export async function getStaticProps() {
 
 8. Inside of our Homepage component we now need to ensure that:
  - we are destructuring the correct key (``allEvents``): 
- ```
+ ```javascript
  export  default  function  Homepage({ allEvents }) {
  
  ....
@@ -403,7 +404,7 @@ export async function getStaticProps() {
  ```
  - and we are filtering out featured events using the featured key:
 
-```
+```javascript
 export default function Homepage({allEvents}) {
 
   const featuredEvents = allEvents.filter(event => event.featured);
@@ -419,7 +420,7 @@ export default function Homepage({allEvents}) {
 
 9. the complete solution should look like this:
 
-```
+```javascript
 import EventList from "./../components/events/EventList";
 import fs from "fs/promises"
 import path from "path"
@@ -460,11 +461,13 @@ export async function getStaticProps() {
 1. Comment out the current getStaticProps component or remove all of the code inside of it so it is empty for us to work with. 
 2. At the top of the file, we will import Mongo Client from monogodb.
 
-```import { MongoClient } from "mongodb"```
+```javascript
+import { MongoClient } from "mongodb"
+```
 
 4. Inside of getStaticProps, we need to establish connection with MongoDB. We will use the ``MongoClient`` we have just imported as well as the connection string provided by MongoDB to do this. We have amended the connection string so it uses environment variables which include our credentials. 
 
-```
+```javascript
 export async function getStaticProps() {
   const DB_STRING = `mongodb+srv://${process.env.mongoDB_username}:${process.env.mongoDB_password}@cluster0.qonetii.mongodb.net/meetups?retryWrites=true&w=majority`;
   const client = await MongoClient.connect(DB_STRING);
@@ -474,7 +477,7 @@ export async function getStaticProps() {
 
 5. Once we have established connection, we can connect to the database. 
 
-```
+```javascript
 export async function getStaticProps() {
   const DB_STRING = `mongodb+srv://${process.env.mongoDB_username}:${process.env.mongoDB_password}@cluster0.qonetii.mongodb.net/meetups?retryWrites=true&w=majority`;
   const client = await MongoClient.connect(DB_STRING);
@@ -485,7 +488,7 @@ export async function getStaticProps() {
 
 6. We can now connect to the collection which stores our data:
 
-```
+```javascript
 export async function getStaticProps() {
   const DB_STRING = `mongodb+srv://${process.env.mongoDB_username}:${process.env.mongoDB_password}@cluster0.qonetii.mongodb.net/meetups?retryWrites=true&w=majority`;
   const client = await MongoClient.connect(DB_STRING);
@@ -499,7 +502,7 @@ export async function getStaticProps() {
 
 7. Finally, we can retrieve data from our collection and turn it into an array for us to work with as follows: 
 
-```
+```javascript
 export async function getStaticProps() {
   const DB_STRING = `mongodb+srv://${process.env.mongoDB_username}:${process.env.mongoDB_password}@cluster0.qonetii.mongodb.net/meetups?retryWrites=true&w=majority`;
   const client = await MongoClient.connect(DB_STRING);
@@ -514,7 +517,7 @@ export async function getStaticProps() {
 
 8. Don't forget to close connection to your database once the data has been retrieved: 
 
-```
+```javascript
 export async function getStaticProps() {
   const DB_STRING = `mongodb+srv://${process.env.mongoDB_username}:${process.env.mongoDB_password}@cluster0.qonetii.mongodb.net/meetups?retryWrites=true&w=majority`;
   const client = await MongoClient.connect(DB_STRING);
@@ -531,7 +534,7 @@ export async function getStaticProps() {
 
 9. Now we can return the retrieve data: 
 
-```
+```javascript
 export async function getStaticProps() {
   const DB_STRING = `mongodb+srv://${process.env.mongoDB_username}:${process.env.mongoDB_password}@cluster0.qonetii.mongodb.net/meetups?retryWrites=true&w=majority`;
   const client = await MongoClient.connect(DB_STRING);
@@ -561,7 +564,7 @@ export async function getStaticProps() {
 
 10. The complete solution should look like this:
 
-```
+```javascript
 import EventList from "./../components/events/EventList";
 import { MongoClient } from "mongodb"
 
