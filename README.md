@@ -339,8 +339,8 @@ const jsonData = await fs.readFile();
 ....
 
 export async function getStaticProps() {
-  const filepath = path.join(process.cwd(), "data", "events", "events_data.json")
-  const jsonData = await fs.readFile(filepath);
+  const filePath = path.join(process.cwd(), "data", "events_data.json")
+  const jsonData = await fs.readFile(filePath);
 }
 
 ```
@@ -348,8 +348,8 @@ export async function getStaticProps() {
 
 ```
 export async function getStaticProps() {
-  const filepath = path.join(process.cwd(), "data", "events", "events_data.json")
-  const jsonData = await fs.readFile(filepath);
+  const filePath = path.join(process.cwd(), "data", "events_data.json")
+  const jsonData = await fs.readFile(filePath);
   const allEvents = JSON.parse(jsonData);
 }
 
@@ -416,8 +416,8 @@ export default function Homepage({allEvents}) {
 }
 
 export async function getStaticProps() {
-  const filepath = path.join(process.cwd(), "data", "events", "events_data.json")
-  const jsonData = await fs.readFile(filepath);
+  const filePath = path.join(process.cwd(), "data", "events_data.json")
+  const jsonData = await fs.readFile(filePath);
   const allEvents = JSON.parse(jsonData);
 
   return {
@@ -524,7 +524,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      events: events.map((event) => ({
+      allEvents: events.map((event) => ({
         date: event.date,
         description: event.description,
         featured: event.featured,
@@ -569,7 +569,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      events: events.map((event) => ({
+      allEvents: events.map((event) => ({
         date: event.date,
         description: event.description,
         featured: event.featured,
@@ -582,3 +582,8 @@ export async function getStaticProps() {
   };
 }
 ```
+
+11. The application should now look like this:
+
+<img width="1520" alt="Screenshot 2023-05-23 at 14 41 43" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/f1ce9d6a-f91d-4328-babb-9eeecd374ed3">
+
