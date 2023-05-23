@@ -144,6 +144,8 @@ You should be presented with VS Code which should look something like this:
 <img width="1720" alt="Screenshot 2023-05-23 at 12 22 14" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/c7c00fcd-cd46-4f57-9ed8-7e80850f9438">
 
 
+#  Solutions
+
 ##  Aim 1: fetch data from an API on the server using React Server  Component
 
 Complete solution:
