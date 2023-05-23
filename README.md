@@ -164,11 +164,12 @@ export  default  function  Homepage({ featuredEvents }) {
   
 export  async  function  getStaticProps() {
 	const  featuredEvents = await  getFeaturedEvents();
-		return {
-			props: {
-				featuredEvents,
-			}
+	
+	return {
+		props: {
+			featuredEvents,
 		}
+	}
 }
 ```
 
@@ -197,12 +198,12 @@ export  async  function  getStaticProps() {
 	const  jsonData = await  fs.readFile(filePath);
 	const  allEvents = JSON.parse(jsonData);
 
-return {
-	props: {
-		allEvents:  allEvents.events
+	return {
+		props: {
+			allEvents:  allEvents.events
+			}
 		}
 	}
-}
 ```
 
 ##  Aim 3: fetch data directly from a database on the server using React Server Component
