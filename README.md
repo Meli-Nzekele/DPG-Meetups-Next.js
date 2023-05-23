@@ -143,3 +143,111 @@ You should be presented with VS Code which should look something like this:
 
 <img width="1720" alt="Screenshot 2023-05-23 at 12 22 14" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/c7c00fcd-cd46-4f57-9ed8-7e80850f9438">
 
+
+##  Aim 1: fetch data from an API on the server using React Server  Component
+
+Complete solution:
+
+```
+import { getFeaturedEvents } from  "/helpers/api";
+import  EventList  from  "./../components/events/EventList";
+
+export  default  function  Homepage({ featuredEvents }) {
+	return (
+		<div  className='Homepage'>
+			<h1  className='main_title'>Welcome to DevOps Playground Events Page</h1>
+			<EventList  events={featuredEvents}  />
+		</div>
+	);
+}
+
+  
+export  async  function  getStaticProps() {
+	const  featuredEvents = await  getFeaturedEvents();
+		return {
+			props: {
+				featuredEvents,
+			}
+		}
+}
+```
+
+##  Aim 2: read data from a filesystem  on the server using React Server Component
+
+Complete solution:
+
+```
+import  EventList  from  "./../components/events/EventList";
+import  fs  from  "fs/promises";
+import  path  from  "path";
+
+export  default  function  Homepage({ allEvents }) {
+	const  featuredEvents = allEvents.filter(event  =>  event.featured)
+
+	return (
+		<div  className='Homepage'>
+			<h1  className='main_title'>Welcome to DevOps Playground Events Page</h1>
+			<EventList  events={featuredEvents}  />
+		</div>
+	);
+}
+
+export  async  function  getStaticProps() {
+	const  filePath = path.join(process.cwd(), "data", "events_data.json")
+	const  jsonData = await  fs.readFile(filePath);
+	const  allEvents = JSON.parse(jsonData);
+
+return {
+	props: {
+		allEvents:  allEvents.events
+		}
+	}
+}
+```
+
+##  Aim 3: fetch data directly from a database on the server using React Server Component
+
+Complete solution:
+
+```
+import  EventList  from  "./../components/events/EventList";
+import { MongoClient } from  "mongodb";
+  
+export  default  function  Homepage({ allEvents }) {
+	const  featuredEvents = allEvents.filter(event  =>  event.featured)
+
+	return (
+		<div  className='Homepage'>
+			<h1  className='main_title'>Welcome to DevOps Playground Events Page</h1>
+			<EventList  events={featuredEvents}  />
+		</div>
+	);
+	}
+
+export  async  function  getStaticProps() {
+	const  DB_STRING = `mongodb+srv://${process.env.mongoDB_username}:${process.env.mongoDB_password}@cluster0.qonetii.mongodb.net/meetups?retryWrites=true&w=majority`;
+	const  client = await  MongoClient.connect(DB_STRING);
+
+	const  db = client.db();
+
+	const  meetupCollection = db.collection("meetups");
+
+	const  events = await  meetupCollection.find().toArray();
+
+  
+
+	return {
+		props: {
+			allEvents:  events.map((event) => ({
+				date:  event.date,
+				description:  event.description,
+				featured:  event.featured,
+				id:  event._id.toString(),
+				location:  event.location,
+				presenters:  event.presenters,
+				title:  event.title,
+			})),
+		},
+	};
+}
+```
