@@ -1,38 +1,115 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Prerequisites (Your own machine)
+This playground uses the following technology so you will need to check they are installed:
 
-## Getting Started
+-   Web Browser
+-   Code IDE (we use VS Code)
+-   Terminal (We use Bash)
+-   Node.js
 
-First, run the development server:
+_**Network**_  The following ports will be used for the application and testing:
+-   3000 -> React application
+-   3001 -> Next.js application
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Getting Started
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+The playground uses React 18 and Next.js 13. Although no existing knowledge of either will be needed for this playground it would be beneficial to have basic knowledge of Javascript.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+# Introduction
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+In this playground, we'll explore React Server Components using Next.js, a leading framework for server-side web application development.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+In the first part of our session, we'll dive into the emerging trend in Front-End Development, focusing on the migration of logic from the client to the server. This strategic shift addresses common challenges such as slow load times and Search Engine Optimization concerns, offering potential solutions.
 
-## Learn More
+In the second part, we'll delve into React Server Components and their pivotal role in transforming React into a comprehensive full-stack framework. We'll unlock the possibilities offered by Server-Side Rendering and React Server Components, showcasing how this approach enables developers to tackle the aforementioned challenges in web development.
 
-To learn more about Next.js, take a look at the following resources:
+# Part 1 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+In this section, we will explore the inner workings of a traditional React application. Our focus will narrow down to a specific timeframe within the application's lifecycle, specifically the events that unfold between a user entering a URL into the browser and the moment they witness meaningful content on the page.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<img width="668" alt="Screenshot 2023-05-23 at 10 06 27" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/9db157cc-5d35-4171-8ebe-b741d77ec4d5">
 
-## Deploy on Vercel
+We will conclude that... 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Part 2 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+In this part, we will transform a traditional React application from being client-side rendered to being server-side rendered using Next.js.
+
+##  Setting up the infrastructure:
+
+### Step 1
+
+Go to: https://lab.devopsplayground.org/ 
+
+This should bring up the following page:
+
+<img width="581" alt="Screenshot 2023-05-23 at 11 29 42" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/431705d0-fabd-4ee9-83d5-a4b8ec9c1257">
+
+### Step 2
+
+Enter YOUR OWN NAME AND SUERNAME in the username box like in the following example. Make sure to use capital letters as per the example. Once done, click submit. 
+
+<img width="640" alt="Screenshot 2023-05-23 at 11 31 32" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/dd37b03c-2e64-46f0-917a-fdd00ac923bd">
+
+### Step 3
+
+The submit button should take you to a page that looks like this. Essencially, you should have access to a terminal and a IDE (VS Code) links. 
+<img width="544" alt="Screenshot 2023-05-23 at 11 33 12" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/a8e6b536-6926-4ae6-a72a-5c19e7f4d207">
+
+### Step 4
+
+Copy and paste the terminal link into the address bar of your browser. This should take you to the terminal that looks something like this:
+
+<img width="687" alt="Screenshot 2023-05-23 at 11 35 57" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/7076d659-525e-4f96-a9c4-839c740bd6f7">
+
+### Step 5
+
+As prompted, enter the following password: 
+
+> Next23
+
+Please be aware that when entering your password, it will not be visibly displayed on the screen as you type it. If you made a mistake, just refresh the page and try again.
+
+if you have sucessfully logged in, your terminal should display the following message:
+
+<img width="675" alt="Screenshot 2023-05-23 at 11 41 04" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/7fc373ff-4bb2-434d-ba7b-7a1e96a4327c">
+
+### Step 6
+
+Run the following commands in the terminal in the following order:
+
+> cd workdir
+> cd DPG-Meetups-Next.js
+> npm i
+> npm run dev
+
+If all of your commands executed correvtly, your terminal should display the following outputs:
+
+<img width="1113" alt="Screenshot 2023-05-23 at 11 51 57" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/15dfee9f-7797-4d2a-b0a6-1c4c1f5431f2">
+
+### Step 7
+
+KEEPT THE TERMINAL RUNNING and open a new browser tab. 
+
+### Step 8
+
+Go back to your terminal page and copy the terminal page url which should look something like this:
+<img width="517" alt="Screenshot 2023-05-23 at 11 53 44" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/46b41768-de12-461b-8e6c-dc2ad5779c92">
+
+### Step 9
+
+In the new tab that you have opened as part of step 7 above, paste the terminal page url that you have just copied. DO NOT PRESS ENTER.
+
+### Step 10
+
+Edit the URL that you have just copied into the new browser tab by replacing "5050/wetty" with "3001". Your edited URL should look something like this:
+
+<img width="424" alt="Screenshot 2023-05-23 at 11 57 33" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/7dbea636-4365-4d91-844a-112eb432169d">
+
+### Step 11
+
+Press enter and check your application is running correctly. If it is running correctly, it should look like this:
+
+<img width="1697" alt="Screenshot 2023-05-23 at 11 58 33" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/f97b0bfa-5204-44bb-9dad-72a29ad3b4ae">
+
+If you are having any issues, please ask for help 😊. 
