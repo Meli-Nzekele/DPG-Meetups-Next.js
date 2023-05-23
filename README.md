@@ -51,7 +51,14 @@ This should bring up the following page:
 </p>
 
 #### Step 2
-Enter YOUR OWN NAME AND SURNAME in the username box like in the following example. Make sure to use capital letters as per the example below:  
+Garb your meetup.com username. Example of meetup.com username is highlighted in yellow below (in this example, it is just the user's name and surname):
+
+<p align="center">
+<img width="1721" alt="Screenshot 2023-05-23 at 17 30 23" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/64ea6f09-e762-47a3-8b4d-48f11a933c0b">
+</p>
+
+#### Step 3
+Insert your meetup.com username into the username box like in the following example. Make sure to use any capital letters as required:  
 
 <p align="center">
 <img width="640" alt="Screenshot 2023-05-23 at 11 31 32" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/dd37b03c-2e64-46f0-917a-fdd00ac923bd">
@@ -60,7 +67,7 @@ Enter YOUR OWN NAME AND SURNAME in the username box like in the following exampl
 Once done, click submit.
 
 
-#### Step 3
+#### Step 4
 The submit button should take you to a page that looks like this:
 
 <p align="center">
@@ -70,14 +77,14 @@ The submit button should take you to a page that looks like this:
  Essentially, you should have access to a terminal and a IDE (VS Code) links. 
  
  
-#### Step 4
+#### Step 5
 Copy and paste the terminal link into the address bar of your browser. This should take you to the terminal that looks something like this:
 
 <p align="center">
 <img width="687" alt="Screenshot 2023-05-23 at 11 35 57" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/7076d659-525e-4f96-a9c4-839c740bd6f7">
 </p>
 
-#### Step 5
+#### Step 6
 As prompted, enter the following password: 
 
 > Next23
@@ -91,7 +98,7 @@ If you have successfully logged in, your terminal should display the following m
 <img width="675" alt="Screenshot 2023-05-23 at 11 41 04" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/7fc373ff-4bb2-434d-ba7b-7a1e96a4327c">
 </p>
 
-#### Step 6
+#### Step 7
 Run the following commands in the terminal in the following order:
 
  1. > cd workdir
@@ -105,28 +112,28 @@ If all of your commands executed correctly, your terminal should display the fol
 <img width="1113" alt="Screenshot 2023-05-23 at 11 51 57" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/15dfee9f-7797-4d2a-b0a6-1c4c1f5431f2">
 </p>
 
-#### Step 7
+#### Step 8
 **KEEPT THE TERMINAL PAGE RUNNING** and open a new browser tab. 
 
 
-#### Step 8
+#### Step 9
 Go back to your terminal page and copy the terminal page URL. The URL should be a link ending in "devopsplayground.org:5050/wetty". For example:
 
 <img width="517" alt="Screenshot 2023-05-23 at 11 53 44" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/46b41768-de12-461b-8e6c-dc2ad5779c92">
 
 
-#### Step 9
+#### Step 10
 In the new tab that you have opened as part of step 7 above, paste the terminal page URL that you have just copied as part of step 8. **DO NOT PRESS ENTER**.
 
 
-#### Step 10
+#### Step 11
 Edit the URL that you have just copied into the new browser tab as part of step 9 by replacing "5050/wetty" with "3001". Your edited URL should look something like this:
 
 <p align="center">
 <img width="424" alt="Screenshot 2023-05-23 at 11 57 33" src="https://github.com/DevOpsPlayground/DPG-Meetups-Next.js/assets/101208108/7dbea636-4365-4d91-844a-112eb432169d">
 </p>
 
-#### Step 11
+#### Step 12
 Press enter and check your application is running correctly. If it is running correctly, it should look like this:
 
 <p align="center">
