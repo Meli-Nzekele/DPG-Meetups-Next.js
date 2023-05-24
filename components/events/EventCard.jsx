@@ -18,7 +18,8 @@ export default function EventCard({ event }) {
         <p className={styles.event_card_date_text}>{event.date}</p>
       </div>
       <Link className={styles.event_card_link} href={`/events/${eventid}`}>
-        {event.title}
+        <p className={styles.emoji}>{event.emoji}</p>
+        <p>{event.title}</p>
       </Link>
       <div className={styles.event_card_location}>
         <IoLocation />

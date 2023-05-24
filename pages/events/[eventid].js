@@ -53,7 +53,10 @@ export default function IndividualEventPage() {
         height={830}
         width={630}
       ></Image>
-      <p className={styles.description}>{event.description}</p>
+      <div
+        dangerouslySetInnerHTML={{ __html: event.description }}
+        className={styles.description}
+      ></div>
     </div>
   );
 }
