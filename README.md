@@ -104,7 +104,7 @@ Run the following commands in the terminal in the following order:
  1. > cd workdir
   2.  > cd DPG-Meetups-Next.js
    3. > npm i
-    4. > npm run dev
+   4. > npm run dev
 
 If all of your commands executed correctly, your terminal should display the following outputs:
 
